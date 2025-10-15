@@ -1,0 +1,44 @@
+package s3;
+
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+
+public class AccesoS3 {
+	private String nombreB = "rmmateosv01.2dam.b1";
+
+	public AccesoS3() {
+		try {
+			//Obtener las credenciales de acceso
+			ProfileCredentialsProvider credenciales = 
+					ProfileCredentialsProvider.create();
+			//Conectar
+			S3Client clienteS3 = S3Client.builder()
+								.region(Region.US_EAST_1) //Virginia norte
+								.credentialsProvider(credenciales)
+								.build();
+			if(clienteS3!=null) {
+				System.out.println("Conectados!!!");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+	public boolean crearBucket(String nombreB2) {
+		// TODO Auto-generated method stub
+		boolean resultado=false;
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	
+	
+	
+}

@@ -1,0 +1,19 @@
+package s3;
+
+import java.util.Scanner;
+
+public class Principal {
+	
+	public static Scanner t = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		1.- Crear Bucket
+		2.- Listar Bucket
+		3.- Subir fichero Bucket
+		4.- Crear fichero en Bucket
+		5.- Mostrar contenido de objeto
+		6.- Eliminar objeto
+	}
+
+}

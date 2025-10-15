@@ -1,0 +1,9 @@
+package s3;
+
+public class AccesoS3 {
+	private String nombreB = "rmmateosv01.2dam.b1";
+
+	
+	
+	
+}
