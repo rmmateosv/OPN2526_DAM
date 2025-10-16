@@ -1,0 +1,65 @@
+package s3;
+
+import java.util.ArrayList;
+
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
+import software.amazon.awssdk.services.s3.model.CreateBucketResponse;
+
+public class AccesoS3 {
+	private String nombreB = "rmmateosv01.2dam.b1";
+	private S3Client clienteS3;
+
+	public AccesoS3() {
+		try {
+			//Obtener las credenciales de acceso
+			ProfileCredentialsProvider credenciales = 
+					ProfileCredentialsProvider.create();
+			//Conectar
+			clienteS3 = S3Client.builder()
+								.region(Region.US_EAST_1) //Virginia norte
+								.credentialsProvider(credenciales)
+								.build();
+			if(clienteS3!=null) {
+				System.out.println("Conectados!!!");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+	public boolean crearBucket(String nombreB2) {
+		// TODO Auto-generated method stub
+		boolean resultado=false;
+		try {
+			//Crear una solicitud de la operación
+			CreateBucketRequest s = CreateBucketRequest.
+					builder()
+					.bucket(nombreB2)
+					.build();
+			//Ejecutar la operación
+			CreateBucketResponse r = clienteS3.createBucket(s);
+			
+			//Procesar la respuesta
+			resultado = true;
+			System.out.println(r);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+	public ArrayList<Object[]> obtenerContenido(String nombreB) {
+		ArrayList<Object[]> resultado = 
+				new ArrayList<Object[]>();
+				
+				
+		return resultado;
+	}
+
+	
+}

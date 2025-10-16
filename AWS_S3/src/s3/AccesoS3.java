@@ -1,13 +1,20 @@
 package s3;
 
+import java.util.ArrayList;
+
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
 import software.amazon.awssdk.services.s3.model.CreateBucketResponse;
+import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
+import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
+import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
+import software.amazon.awssdk.services.s3.model.ListObjectsV2Response;
+import software.amazon.awssdk.services.s3.model.S3Object;
 
 public class AccesoS3 {
-	private String nombreB = "rmmateosv01.2dam.b1";
+
 	private S3Client clienteS3;
 
 	public AccesoS3() {
@@ -49,6 +56,53 @@ public class AccesoS3 {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		return resultado;
+	}
+	public ArrayList<Object[]> obtenerContenido(String nombreB) {
+		ArrayList<Object[]> resultado = 
+				new ArrayList<Object[]>();
+		try {
+			ListObjectsV2Request s = 
+					ListObjectsV2Request.builder()
+					.bucket(nombreB)
+					.build();
+			ListObjectsV2Response r = clienteS3.listObjectsV2(s);
+			
+			//Recorremos r para pasar los objetos de S3
+			// a resultado
+			for(S3Object o:r.contents()) {
+				String tipo = obtenerTipo(nombreB,o.key());
+				
+				Object[] tmp = {o.key(),
+						tipo,
+						o.size(),o.lastModified()};
+				resultado.add(tmp);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+				
+		return resultado;
+	}
+
+	private String obtenerTipo(String nombreB, String clave) {
+		// TODO Auto-generated method stub
+		String resultado = "";
+		try {
+			HeadObjectRequest s = HeadObjectRequest.builder()
+					.bucket(nombreB)
+					.key(clave)
+					.build();
+			HeadObjectResponse r = clienteS3.headObject(s);
+			resultado = r.contentType();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 		return resultado;
 	}
 
