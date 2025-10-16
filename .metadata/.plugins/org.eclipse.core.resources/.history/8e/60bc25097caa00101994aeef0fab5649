@@ -1,6 +1,5 @@
 package s3;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,32 +30,9 @@ public class Principal {
 				listarBucket();
 				break;
 			}
-			case 3:
-				subirFichero();
-				break;
+			
 			}
 		}while(opcion!=0);
-		
-	}
-
-	private static void subirFichero() {
-		// TODO Auto-generated method stub
-		System.out.println("Nombre bucket:");
-		String nombre = t.nextLine();
-		
-		System.out.println("Ruta de fichero a subir:");
-		String rutaF = t.nextLine();
-		
-		//Comprobar que el fichero existe
-		File f = new File(rutaF);
-		if(f.exists()) {
-			if(s3.subirFichero(nombre,rutaF)) {
-				System.out.println("Fichero cargado");
-			}
-			else {
-				System.out.println("Error: No se puede cargar el fichero");
-			}
-		}
 		
 	}
 

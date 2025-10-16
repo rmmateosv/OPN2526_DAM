@@ -11,7 +11,6 @@ import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
 import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Response;
-import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.S3Object;
 
 public class AccesoS3 {
@@ -98,24 +97,6 @@ public class AccesoS3 {
 					.build();
 			HeadObjectResponse r = clienteS3.headObject(s);
 			resultado = r.contentType();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
-		return resultado;
-	}
-
-	public boolean subirFichero(String nombreB, String rutaF) {
-		// TODO Auto-generated method stub
-		boolean resultado = false;
-		try {
-			PutObjectRequest s = PutObjectRequest.builder()
-					.bucket(nombreB)
-					.key(rutaF)
-					.build();
-			clienteS3.putObject(s, null);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
