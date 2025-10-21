@@ -1,8 +1,11 @@
 package s3;
 
+import java.io.File;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
@@ -46,7 +49,7 @@ public class AccesoS3 {
 					builder()
 					.bucket(nombreB2)
 					.build();
-			//Ejecutar la operación
+//			Ejecutar la operación
 			CreateBucketResponse r = clienteS3.createBucket(s);
 			
 			//Procesar la respuesta
@@ -115,8 +118,31 @@ public class AccesoS3 {
 					.bucket(nombreB)
 					.key(rutaF)
 					.build();
-			clienteS3.putObject(s, null);
-			
+			//Creamos un objeto de la clase REquestBody
+			//con el contenido del fichero
+			RequestBody rb = RequestBody.fromFile(new File(rutaF));
+			clienteS3.putObject(s, rb);
+			resultado=true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return resultado;
+	}
+
+	public boolean crearFichero(String nombreB, String contenido) {
+		boolean resultado = false;
+		try {
+			PutObjectRequest s = PutObjectRequest.builder()
+					.bucket(nombreB)
+					.key("notas"+LocalDateTime.now()+".txt")
+					.build();
+			//Creamos un objeto de la clase REquestBody
+			//con el contenido del fichero
+			RequestBody rb = RequestBody.fromString(contenido);
+			clienteS3.putObject(s, rb);
+			resultado=true;
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

@@ -31,12 +31,32 @@ public class Principal {
 				listarBucket();
 				break;
 			}
-			case 3:
+			case 3:{
 				subirFichero();
 				break;
 			}
+			case 4:
+				crearFichero();
+				break;
+			}
 		}while(opcion!=0);
+
+	}
+
+	private static void crearFichero() {
+		// TODO Auto-generated method stub
+		System.out.println("Nombre bucket:");
+		String nombre = t.nextLine();
 		
+		System.out.println("Introduce el texto del fichero");
+		String contenido = t.nextLine();
+		
+		if(s3.crearFichero(nombre,contenido)) {
+			System.out.println("Fichero cargado");
+		}
+		else {
+			System.out.println("Error: No se puede cargar el fichero");
+		}
 	}
 
 	private static void subirFichero() {
