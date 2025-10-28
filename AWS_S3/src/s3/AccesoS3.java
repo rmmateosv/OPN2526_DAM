@@ -1,17 +1,27 @@
 package s3;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.core.sync.ResponseTransformer;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.Bucket;
 import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
 import software.amazon.awssdk.services.s3.model.CreateBucketResponse;
+import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
+import software.amazon.awssdk.services.s3.model.DeleteObjectResponse;
+import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
 import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
+import software.amazon.awssdk.services.s3.model.ListBucketsResponse;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Response;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
@@ -148,6 +158,68 @@ public class AccesoS3 {
 			e.printStackTrace();
 		}
 		
+		return resultado;
+	}
+
+	public void mostrarFichero(String bucket, String objeto) {
+		// TODO Auto-generated method stub
+		try {
+			GetObjectRequest s = GetObjectRequest.builder()
+									.bucket(bucket)
+									.key(objeto)
+									.build();
+			InputStream r = 
+					clienteS3.getObject(s, 
+							ResponseTransformer.toInputStream());
+			System.out.println("Contenido del fichero:");
+			try (BufferedReader fichero = 
+				new BufferedReader(new InputStreamReader(r))){
+				String linea;
+				while((linea=fichero.readLine())!=null) {
+					System.out.println(linea);
+				}
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+	public boolean borrarFichero(String nombre, String objeto) {
+		// TODO Auto-generated method stub
+		boolean resultado = false;
+		try {
+			DeleteObjectRequest s = DeleteObjectRequest.builder()
+					.bucket(nombre)
+					.key(objeto)
+					.build();
+			DeleteObjectResponse r =  clienteS3.deleteObject(s);
+			resultado=true;
+
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public ArrayList<String> obtenerBuckets() {
+		// TODO Auto-generated method stub
+		ArrayList<String> resultado = new ArrayList<String>();
+		try {
+			ListBucketsResponse r = clienteS3.listBuckets();
+
+            for(Bucket b:r.buckets()){
+            	resultado.add(b.name());
+            }
+            
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		return resultado;
 	}
 

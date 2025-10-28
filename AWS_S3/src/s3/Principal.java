@@ -23,30 +23,64 @@ public class Principal {
 			opcion = t.nextInt();t.nextLine();
 			
 			switch (opcion) {
-			case 1: {
+			case 1: 
 					crearBucket();
 					break;
-				}
-			case 2:{
+				
+			case 2:
 				listarBucket();
 				break;
-			}
-			case 3:{
+			
+			case 3:
 				subirFichero();
 				break;
-			}
+			
 			case 4:
 				crearFichero();
 				break;
+			case 5:
+				mostrarFichero();
+				break;
+			case 6:
+				borrarFichero();
+				break;
 			}
+			
 		}while(opcion!=0);
+	}
 
+	private static void borrarFichero() {
+		// TODO Auto-generated method stub
+		//Mostrar los objetos que hay en un bucket
+		String nombre = pedirNombreBucket();
+		
+		System.out.println("Introduce nombre objeto");
+		String objeto = t.nextLine();
+		
+		if(s3.borrarFichero(nombre,objeto)) {
+			System.out.println("Fichero borrado");
+		}
+		else {
+			System.err.println("Error al borrar el fichero");
+		}
+	}
+
+	private static void mostrarFichero() {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		//Mostrar los objetos que hay en un bucket
+		String nombre = pedirNombreBucket();
+		
+		System.out.println("Introduce nombre objeto");
+		String objeto = t.nextLine();
+		
+		s3.mostrarFichero(nombre,objeto);
 	}
 
 	private static void crearFichero() {
 		// TODO Auto-generated method stub
-		System.out.println("Nombre bucket:");
-		String nombre = t.nextLine();
+		//Mostrar los objetos que hay en un bucket
+		String nombre = pedirNombreBucket();
 		
 		System.out.println("Introduce el texto del fichero");
 		String contenido = t.nextLine();
@@ -61,8 +95,8 @@ public class Principal {
 
 	private static void subirFichero() {
 		// TODO Auto-generated method stub
-		System.out.println("Nombre bucket:");
-		String nombre = t.nextLine();
+		//Mostrar los objetos que hay en un bucket
+		String nombre = pedirNombreBucket();
 		
 		System.out.println("Ruta de fichero a subir:");
 		String rutaF = t.nextLine();
@@ -83,8 +117,7 @@ public class Principal {
 	private static void listarBucket() {
 		// TODO Auto-generated method stub
 		//Mostrar los objetos que hay en un bucket
-		System.out.println("Nombre bucket:");
-		String nombre = t.nextLine();
+		String nombre = pedirNombreBucket();
 		
 		ArrayList<Object[]> objetos =
 				s3.obtenerContenido(nombre);
@@ -95,6 +128,17 @@ public class Principal {
 					"\tTamaño:"+o[2]+
 					"\tModificación:"+o[3]);
 		}
+	}
+
+	private static String pedirNombreBucket() {
+		// TODO Auto-generated method stub
+		//Listar los buckets
+		ArrayList<String> buckets = s3.obtenerBuckets();
+		for(String b:buckets) {
+			System.out.println(b);
+		}
+		System.out.println("Nombre bucket:");
+		return(t.nextLine());
 	}
 
 	private static void crearBucket() {

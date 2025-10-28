@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;img.png&apos; to &apos;AWS_S3&apos;&#x0D;&#x0A;- Original project: &apos;AWS_S3&apos;&#x0D;&#x0A;- Destination element: &apos;AWS_S3&apos;&#x0D;&#x0A;- Original element: &apos;img.png&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=AWS_S3" element1="src/s3/img.png" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1761036846365" units="0" version="1.0"/>
+</session>
