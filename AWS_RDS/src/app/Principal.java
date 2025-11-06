@@ -1,5 +1,7 @@
 package app;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Principal {
@@ -20,10 +22,13 @@ public class Principal {
 				System.out.println("6.- Eliminar Tarea");
 				System.out.println("7.- Mostrar por Fecha");
 				System.out.println("Introduce opción:");
-				opcion = t.nextInt();t.nextLine();
+				opcion = te.nextInt();te.nextLine();
 				switch (opcion) {
 				case 1: 
 					crearTarea();
+					break;
+				case 2: 
+					listarTareas();
 					break;
 				}
 			}while(opcion!=0);
@@ -31,6 +36,12 @@ public class Principal {
 		else {
 			System.err.println("No hay conexión con la BD");
 		}
+	}
+
+	private static void listarTareas() {
+		// TODO Auto-generated method stub
+		ArrayList<Tarea> tareas= bd.obtenerTareas();
+		
 	}
 
 	private static void crearTarea() {
@@ -43,8 +54,12 @@ public class Principal {
 		System.out.println("Prioridad (baja/media/alta)");
 		t.setPrioridad(te.nextLine());
 		if(bd.crearTarea(t)) {
-			
+			System.out.println("Tarea creada. ID:"+t.getId());
+		}
+		else {
+			System.err.println("No se ha creado la tarea");
 		}
 		
 	}
+	
 }
