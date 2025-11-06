@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="AWS_RDS"/>
 			<item value="AWS_S3"/>
 			<item value="bb"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="AWS_RDS"/>
 			<item value="AWS_S3"/>
 			<item value="bb"/>
 		</list>

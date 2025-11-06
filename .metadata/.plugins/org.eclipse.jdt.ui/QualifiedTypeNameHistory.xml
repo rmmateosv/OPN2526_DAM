@@ -6,4 +6,6 @@
     <fullyQualifiedTypeName name="software.amazon.awssdk.services.s3.model.ListBucketsResponse"/>
     <fullyQualifiedTypeName name="software.amazon.awssdk.services.s3.model.Bucket"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
 </qualifiedTypeNameHistroy>
