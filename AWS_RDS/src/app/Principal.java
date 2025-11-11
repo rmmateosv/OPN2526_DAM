@@ -30,6 +30,9 @@ public class Principal {
 				case 2: 
 					listarTareas();
 					break;
+				case 3: 
+					listarTareasPorId();
+					break;
 				}
 			}while(opcion!=0);
 		}
@@ -38,10 +41,22 @@ public class Principal {
 		}
 	}
 
+	private static void listarTareasPorId() {
+		// TODO Auto-generated method stub
+		System.out.println("Introduce ID");
+		int id = te.nextInt();te.nextLine();
+		ArrayList<Tarea> tareas= bd.obtenerTareas();
+		for(Tarea t : tareas) {
+			System.out.println(t);
+		}
+	}
+
 	private static void listarTareas() {
 		// TODO Auto-generated method stub
 		ArrayList<Tarea> tareas= bd.obtenerTareas();
-		
+		for(Tarea t : tareas) {
+			System.out.println(t);
+		}	
 	}
 
 	private static void crearTarea() {

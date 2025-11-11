@@ -1,6 +1,7 @@
 package app;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Tarea {
 	private int id;
@@ -74,7 +75,13 @@ public class Tarea {
 
 	@Override
 	public String toString() {
-		return "Tarea [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fechaC=" + fechaC
+		//Formatear fechas
+		DateTimeFormatter formato = 
+				DateTimeFormatter.ofPattern("d/M/yyyy H:m:s");
+		return "Tarea [id=" + id + ", "
+				+ "titulo=" + titulo +
+				", descripcion=" + descripcion + ", "
+				+ "fechaC=" + fechaC.format(formato)
 				+ ", prioridad=" + prioridad + ", estado=" + estado + "]";
 	}
 	

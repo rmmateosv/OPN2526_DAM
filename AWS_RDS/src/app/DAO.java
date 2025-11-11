@@ -7,6 +7,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class DAO {
@@ -71,6 +74,34 @@ public class DAO {
 					t.setId(idS.getInt(1));
 				}
 			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public ArrayList<Tarea> obtenerTareas() {
+		// TODO Auto-generated method stub
+		ArrayList<Tarea> resultado = new ArrayList<Tarea>();
+		try {
+			Statement c = conexion.createStatement();
+			ResultSet r = c.executeQuery("SELECT * from tareas");
+			while(r.next()) {
+				//Convertimos la fecha de MySQL a una marca de tiempo
+				Timestamp ts = r.getTimestamp("fechaC");
+				//Generar una fecha de tipo LocalDateTime
+				LocalDateTime f = ts.toLocalDateTime();
+				
+				resultado.add(new Tarea(r.getInt("id"), 
+						r.getString("titulo"), 
+						r.getString("descripcion"),
+						f, 
+						r.getString("prioridad"), 
+						r.getString("estado")));
+			}
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
