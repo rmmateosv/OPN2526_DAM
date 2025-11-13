@@ -33,6 +33,12 @@ public class Principal {
 				case 3: 
 					listarTareasPorId();
 					break;
+				case 4: 
+					listarTareasPorEstado();
+					break;
+				case 5: 
+					modificarTarea();
+					break;
 				}
 			}while(opcion!=0);
 		}
@@ -41,13 +47,41 @@ public class Principal {
 		}
 	}
 
+	private static void modificarTarea() {
+		// TODO Auto-generated method stub
+		listarTareas();
+		System.out.println("Introduce ID:");
+		int id = te.nextInt(); te.nextLine();
+		//Comprobar si la tarea existe
+		Tarea t = bd.obtenerTareas(id);
+		if(t==null) {
+			System.out.println("No existe esa tarea");
+		}
+		else {
+			
+		}
+	}
+
+	private static void listarTareasPorEstado() {
+		// TODO Auto-generated method stub
+		System.out.println("Estado(Pendiente|En proceso|Finalizada):");
+		String estado = te.nextLine();
+		ArrayList<Tarea> tareas= bd.obtenerTareas(estado);
+		for(Tarea t : tareas) {
+			System.out.println(t);
+		}
+	}
+
 	private static void listarTareasPorId() {
 		// TODO Auto-generated method stub
 		System.out.println("Introduce ID");
 		int id = te.nextInt();te.nextLine();
-		ArrayList<Tarea> tareas= bd.obtenerTareas();
-		for(Tarea t : tareas) {
-			System.out.println(t);
+		Tarea tarea= bd.obtenerTareas(id);
+		if(tarea!=null) {
+			System.out.println(tarea);
+		}
+		else {
+			System.out.println("No ha encontrado la tarea");
 		}
 	}
 

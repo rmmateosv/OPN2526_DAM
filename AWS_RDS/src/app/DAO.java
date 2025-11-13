@@ -109,6 +109,68 @@ public class DAO {
 		}
 		return resultado;
 	}
+
+	public Tarea obtenerTareas(int id) {
+		// TODO Auto-generated method stub
+		Tarea resultado = null;
+		try {
+			PreparedStatement c = 
+					conexion.prepareStatement("SELECT * "
+							+ "from tareas where id = ?");
+			c.setInt(1, id);
+			ResultSet r = c.executeQuery();
+			if(r.next()) {
+				//Convertimos la fecha de MySQL a una marca de tiempo
+				Timestamp ts = r.getTimestamp("fechaC");
+				//Generar una fecha de tipo LocalDateTime
+				LocalDateTime f = ts.toLocalDateTime();
+				
+				resultado= new Tarea(r.getInt("id"), 
+						r.getString("titulo"), 
+						r.getString("descripcion"),
+						f, 
+						r.getString("prioridad"), 
+						r.getString("estado"));
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public ArrayList<Tarea> obtenerTareas(String estado) {
+		// TODO Auto-generated method stub
+		ArrayList<Tarea> resultado = new ArrayList<Tarea>();
+		try {
+			PreparedStatement c = 
+					conexion.prepareStatement("SELECT * "
+							+ "from tareas where estado = ?");
+			c.setString(1, estado);
+			ResultSet r = c.executeQuery();
+			while(r.next()) {
+				//Convertimos la fecha de MySQL a una marca de tiempo
+				Timestamp ts = r.getTimestamp("fechaC");
+				//Generar una fecha de tipo LocalDateTime
+				LocalDateTime f = ts.toLocalDateTime();
+				
+				resultado.add(new Tarea(r.getInt("id"), 
+						r.getString("titulo"), 
+						r.getString("descripcion"),
+						f, 
+						r.getString("prioridad"), 
+						r.getString("estado"))
+				);
+			}			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
 	
 	
 }
