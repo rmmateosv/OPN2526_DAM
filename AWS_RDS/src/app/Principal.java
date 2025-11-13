@@ -1,5 +1,8 @@
 package app;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -39,11 +42,60 @@ public class Principal {
 				case 5: 
 					modificarTarea();
 					break;
+				case 6: 
+					eliminarTarea();
+					break;
+				case 7: 
+					mostrarPorFecha();
+					break;
 				}
 			}while(opcion!=0);
 		}
 		else {
 			System.err.println("No hay conexión con la BD");
+		}
+	}
+
+	private static void mostrarPorFecha() {
+		// TODO Auto-generated method stub
+		try {
+			System.out.println("Introduce el día (ddMMyyyy)");
+			String tFecha = te.nextLine();
+			
+			//Declarar un formateador
+			DateTimeFormatter formato = 
+					DateTimeFormatter.ofPattern("ddMMyyyy");
+			
+			LocalDate fecha = LocalDate.parse(tFecha,formato);
+			System.out.println(fecha);
+			ArrayList<Tarea> tareas= bd.obtenerTareas(fecha);
+			for(Tarea t : tareas) {
+				System.out.println(t);
+			}
+		} catch (DateTimeParseException e) {
+			// TODO: handle exception
+			System.out.println("FEcha no válida");
+		}
+		
+	}
+
+	private static void eliminarTarea() {
+		// TODO Auto-generated method stub
+		listarTareas();
+		System.out.println("Introduce ID:");
+		int id = te.nextInt(); te.nextLine();
+		//Comprobar si la tarea existe
+		Tarea t = bd.obtenerTareas(id);
+		if(t==null) {
+			System.out.println("No existe esa tarea");
+		}
+		else {			
+			if(bd.borrarTarea(t)) {
+				System.out.println("Tarea borrada");
+			}
+			else {
+				System.err.println("No se ha borrado la tarea");
+			}
 		}
 	}
 
@@ -58,7 +110,32 @@ public class Principal {
 			System.out.println("No existe esa tarea");
 		}
 		else {
-			
+			System.out.println("Título");
+			String tmp = te.nextLine();
+			if(tmp!="") {
+				t.setTitulo(tmp);
+			}
+			System.out.println("Descripción");
+			tmp = te.nextLine();
+			if(tmp!="") {
+				t.setDescripcion(tmp);
+			}
+			System.out.println("Prioridad (baja/media/alta)");
+			tmp = te.nextLine();
+			if(tmp!="") {
+				t.setPrioridad(tmp);
+			}
+			System.out.println("Estado (Pendiente/En proces/Finalizadas)");
+			tmp = te.nextLine();
+			if(tmp!="") {
+				t.setEstado(tmp);
+			}
+			if(bd.modificarTarea(t)) {
+				System.out.println("Tarea modificada");
+			}
+			else {
+				System.err.println("No se ha modificado la tarea");
+			}
 		}
 	}
 

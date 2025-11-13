@@ -3,11 +3,13 @@ package app;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -149,6 +151,86 @@ public class DAO {
 					conexion.prepareStatement("SELECT * "
 							+ "from tareas where estado = ?");
 			c.setString(1, estado);
+			ResultSet r = c.executeQuery();
+			while(r.next()) {
+				//Convertimos la fecha de MySQL a una marca de tiempo
+				Timestamp ts = r.getTimestamp("fechaC");
+				//Generar una fecha de tipo LocalDateTime
+				LocalDateTime f = ts.toLocalDateTime();
+				
+				resultado.add(new Tarea(r.getInt("id"), 
+						r.getString("titulo"), 
+						r.getString("descripcion"),
+						f, 
+						r.getString("prioridad"), 
+						r.getString("estado"))
+				);
+			}			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public boolean modificarTarea(Tarea t) {
+		// TODO Auto-generated method stub
+		boolean resultado = false;
+		try {
+			PreparedStatement c = 
+					conexion.prepareStatement("UPDATE tareas "
+							+ "SET titulo = ?, "
+							+ "descripcion = ?,"
+							+ "prioridad = ?,"
+							+ "estado = ?"
+							+ "WHERE id = ?");
+			c.setString(1, t.getTitulo());
+			c.setString(2, t.getDescripcion());
+			c.setString(3, t.getPrioridad());
+			c.setString(4, t.getEstado());
+			c.setInt(5, t.getId());
+			int numReg = c.executeUpdate();
+			if(numReg==1) {
+				resultado=true;
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public boolean borrarTarea(Tarea t) {
+		// TODO Auto-generated method stub
+		boolean resultado = false;
+		try {
+			PreparedStatement c = 
+					conexion.prepareStatement("DELETE from tareas "
+							+ "WHERE id = ?");			
+			c.setInt(1, t.getId());
+			int numReg = c.executeUpdate();
+			if(numReg==1) {
+				resultado=true;
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public ArrayList<Tarea> obtenerTareas(LocalDate fecha) {
+		// TODO Auto-generated method stub
+		ArrayList<Tarea> resultado = new ArrayList<Tarea>();
+		try {
+			Date fechaSQL = Date.valueOf(fecha);
+			PreparedStatement c = 
+					conexion.prepareStatement("SELECT * "
+							+ "from tareas where date(fechaC) = ?");
+			c.setDate(1, fechaSQL);
 			ResultSet r = c.executeQuery();
 			while(r.next()) {
 				//Convertimos la fecha de MySQL a una marca de tiempo
