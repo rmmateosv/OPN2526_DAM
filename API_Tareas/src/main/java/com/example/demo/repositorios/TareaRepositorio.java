@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
 import com.example.demo.modelos.TareaModelo;
 
-import jakarta.persistence.EntityManager;
+
 
 public interface TareaRepositorio 
 	extends JpaRepository<TareaModelo, Long>{
