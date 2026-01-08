@@ -1,5 +1,3 @@
-2025/12/18-18:55:11.570 f68 Log #3: 8 ops saved to Table #4 OK
-2025/12/18-18:55:11.581 f68 Archiving C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/000003.log: OK
-2025/12/18-18:55:11.582 f68 Table #4: 8 entries OK
-2025/12/18-18:55:11.583 f68 Archiving C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/MANIFEST-000001: OK
-2025/12/18-18:55:11.607 f68 **** Repaired leveldb C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database; recovered 1 files; 268 bytes. Some data may have been lost. ****
+2026/01/07-22:17:56.537 1e74 Reusing MANIFEST C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/MANIFEST-000001
+2026/01/07-22:17:56.539 1e74 Recovering log #6
+2026/01/07-22:17:56.540 1e74 Reusing old log C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Site Characteristics Database/000006.log 
