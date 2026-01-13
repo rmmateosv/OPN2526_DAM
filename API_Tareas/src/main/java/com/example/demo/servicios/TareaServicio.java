@@ -49,8 +49,34 @@ public class TareaServicio {
 			throw new Exception("Error al crear la tarea:"+e.getMessage());
 		}
 	}
-	public TareaModelo modificarTarea(TareaModelo t) {
-		return null;
+	public TareaModelo modificarTarea(TareaModelo t) throws Exception {
+		//Comprobar que se pasa el id de la tarea a modificar
+		if(t.getId()==null) {
+			throw new Exception("id es obligatorio");
+		}
+		//Comprobar que la tarea existe
+		TareaModelo tBD = tr.findById(t.getId()).orElse(null);
+		if(tBD==null) {
+			throw new Exception("No existe la tareas");
+		}
+		
+		//Modificar tarea
+		//Modificar los campos que vienen en JSON
+		if(t.getTitulo()!=null) {
+			tBD.setTitulo(t.getTitulo());
+		}
+		if(t.getEstado()!=null) {
+			tBD.setEstado(t.getEstado());
+		}
+		if(t.getPrioridad()!=null) {
+			tBD.setPrioridad(t.getPrioridad());
+		}
+		if(t.getDescricion()!=null) {
+			tBD.setDescricion(t.getDescricion());
+		}
+		//Guardar en BD
+		return tr.save(tBD);
+		
 	}
 	public boolean borrarTarea(TareaModelo t) {
 		return false;
