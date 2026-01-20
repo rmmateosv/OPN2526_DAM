@@ -3,11 +3,13 @@ package com.example.demo.controladores;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.modelos.TareaModelo;
@@ -29,18 +31,36 @@ public class TareaControlador {
 		return ts.obtenerTareas();
 	}
 	
-	@PostMapping("crear")
+	@PostMapping("/crear")
 	public TareaModelo 
 		crearTarea(@RequestBody TareaModelo t) 
 				throws Exception {
 		return ts.insertarTarea(t);
 	}
 	
-	@PutMapping("modificar")
+	@PutMapping("/modificar")
 	public TareaModelo modificarTarea(@RequestBody TareaModelo t) 
-			throws Exception {
+			throws Exception  {
 		return ts.modificarTarea(t);
 	}
 	
+	@DeleteMapping("/borrar")
+	public boolean borrarTarea(@RequestParam Long id) throws Exception {
+		boolean resultado = false;
+		resultado = ts.borrarTarea(id);
+		return resultado;
+	}
 	
+	@GetMapping("/prioridad")
+	public List<TareaModelo> 
+		obtenerPorPrioridad(@RequestParam String prioridad){
+		return ts.obtenerTareaPorPrioridad(prioridad);
+		
+	}
+	@GetMapping("/estado")
+	public List<TareaModelo> 
+		obtenerPorEstado(@RequestParam String estado){
+		return ts.obtenerTareaPorEstado(estado);
+		
+	}
 }

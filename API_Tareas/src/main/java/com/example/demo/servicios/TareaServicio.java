@@ -24,11 +24,11 @@ public class TareaServicio {
 		return null;
 	}
 
-	public TareaModelo obtenerTareaPorPrioridad(String p) {
-		return null;
+	public List<TareaModelo> obtenerTareaPorPrioridad(String p) {
+		return tr.findByPrioridad(p);
 	}
-	public TareaModelo obtenerTareaPorEstado(String e) {
-		return null;
+	public List<TareaModelo> obtenerTareaPorEstado(String e) {
+		return tr.findByEstado(e);
 	}
 	public TareaModelo insertarTarea(TareaModelo t) throws Exception {
 		try {
@@ -41,8 +41,21 @@ public class TareaServicio {
 			   t.getFecha_creacion() == null) {
 				throw new Exception("Faltan datos de la tarea ");
 			}else {
+				//comprobar prioridad
+				if(!t.getPrioridad().equals("baja") && 
+						!t.getPrioridad().equals("media") && 
+						!t.getPrioridad().equals("alta")) {
+					throw new Exception("Priodad incorrecta (baja|media|alta)");
+				}
+				//comprobar estado
+				if(!t.getEstado().equals("pendiente") && 
+						!t.getEstado().equals("iniciado") && 
+						!t.getEstado().equals("finalizado")) {
+					throw new Exception("Estado incorrecto (pendiente|iniciado|finalizado)");
+				}	
 				return tr.save(t);
 			}
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -78,8 +91,18 @@ public class TareaServicio {
 		return tr.save(tBD);
 		
 	}
-	public boolean borrarTarea(TareaModelo t) {
-		return false;
+	public boolean borrarTarea(Long id) throws Exception {
+		boolean resultado = false;
+		
+		//Comprobar que la tarea existe
+		TareaModelo t = tr.findById(id).orElse(null);
+		if(t==null) {
+			throw new Exception("No existe la tarea");
+		}
+		//Borrar la tarea
+		tr.delete(t);
+		resultado=true;
+		return resultado;
 	}
 	
 }

@@ -18,7 +18,7 @@ public interface TareaRepositorio
     
     //Definimos métodos particulares
     //Obtener tareas por prioridad
-    @Query("SELECT t FROM TareaModelo t WHERE t.prioridad = :prioridad")
+  
     List<TareaModelo> findByPrioridad(String prioridad);
 	
 	//Obtener tareas por estado
