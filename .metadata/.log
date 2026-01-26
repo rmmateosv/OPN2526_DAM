@@ -1372,3 +1372,318 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.jface.text.IDocument.
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-20 21:58:17.132
 !MESSAGE Direct modification of testCompileSourceRoots through add() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+!SESSION 2026-01-21 21:59:38.425 -----------------------------------------------
+eclipse.buildId=4.38.0.20251204-0849
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-01-21 21:59:49.401
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-01-21 21:59:55.161
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-01-21 21:59:56.969
+!MESSAGE Logback config file: C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.101.20251017-1242.xml
+
+!ENTRY org.eclipse.ui 2 0 2026-01-21 21:59:58.571
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-21 21:59:58.571
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2026-01-21 21:59:59.719
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-21 21:59:59.721
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-01-21 22:00:41.208
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Administrator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-21 22:01:12.571
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:16.494
+!MESSAGE 22:01:16.492 [pool-3-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-21 22:01:17.423
+!MESSAGE Direct modification of compileSourceRoots through clear() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-21 22:01:17.424
+!MESSAGE Direct modification of compileSourceRoots through add() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-21 22:01:17.426
+!MESSAGE Direct modification of testCompileSourceRoots through clear() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-21 22:01:17.443
+!MESSAGE Direct modification of testCompileSourceRoots through add() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:17.529
+!MESSAGE 22:01:17.529 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file created event: [file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/META-INF/maven/com.example/API_Tareas/pom.properties, file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/META-INF/maven/com.example/API_Tareas/pom.xml, file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/application.properties]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:17.566
+!MESSAGE 22:01:17.564 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file created event: [file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/META-INF/MANIFEST.MF, file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/META-INF/maven/com.example/API_Tareas/pom.properties, file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/META-INF/maven/com.example/API_Tareas/pom.xml, file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/target/classes/application.properties]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:17.567
+!MESSAGE 22:01:17.562 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - additional reconciling with complete index triggered for: [C:\Users\Administrator\eclipse-workspace\API_Tareas\src\main\java\com\example\demo\controladores\TareaControlador.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:21.156
+!MESSAGE 22:01:21.156 [pool-3-thread-4] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:21.163
+!MESSAGE 22:01:21.162 [pool-3-thread-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.208
+!MESSAGE 22:01:29.207 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.210
+!MESSAGE 22:01:29.208 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.211
+!MESSAGE 22:01:29.211 [pool-3-thread-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.213
+!MESSAGE 22:01:29.212 [pool-3-thread-4] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.216
+!MESSAGE 22:01:29.214 [pool-3-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.217
+!MESSAGE 22:01:29.217 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.218
+!MESSAGE 22:01:29.213 [pool-3-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.219
+!MESSAGE 22:01:29.218 [pool-3-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.225
+!MESSAGE 22:01:29.215 [pool-3-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.226
+!MESSAGE 22:01:29.225 [pool-3-thread-5] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.229
+!MESSAGE 22:01:29.228 [pool-3-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.232
+!MESSAGE 22:01:29.231 [pool-3-thread-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.260
+!MESSAGE 22:01:29.259 [pool-3-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.261
+!MESSAGE 22:01:29.261 [pool-3-thread-4] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.262
+!MESSAGE 22:01:29.259 [pool-3-thread-5] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.286
+!MESSAGE 22:01:29.285 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java done in 19639ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.287
+!MESSAGE 22:01:29.286 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:01:29.356
+!MESSAGE 22:01:29.356 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - additional reconciling with complete index triggered for: [C:\Users\Administrator\eclipse-workspace\API_Tareas\src\main\java\com\example\demo\controladores\TareaControlador.java]
+
+!ENTRY org.eclipse.jface 2 0 2026-01-21 22:15:45.860
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2026-01-21 22:15:45.860
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:00.586
+!MESSAGE 22:16:00.585 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:00.595
+!MESSAGE 22:16:00.570 [pool-3-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:00.661
+!MESSAGE 22:16:00.660 [pool-5-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:01.278
+!MESSAGE 22:16:01.277 [pool-5-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:01.281
+!MESSAGE 22:16:01.279 [pool-5-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:01.286
+!MESSAGE 22:16:01.285 [pool-3-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:01.289
+!MESSAGE 22:16:01.288 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:01.295
+!MESSAGE 22:16:01.290 [pool-3-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:01.313
+!MESSAGE 22:16:01.310 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:03.052
+!MESSAGE 22:16:03.051 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:03.057
+!MESSAGE 22:16:03.056 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:03.061
+!MESSAGE 22:16:03.060 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:03.062
+!MESSAGE 22:16:03.061 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:16:03.063
+!MESSAGE 22:16:03.062 [pool-3-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.739
+!MESSAGE 22:28:01.739 [pool-3-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.741
+!MESSAGE 22:28:01.741 [pool-5-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.912
+!MESSAGE 22:28:01.912 [pool-3-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.969
+!MESSAGE 22:28:01.967 [pool-5-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.970
+!MESSAGE 22:28:01.970 [pool-5-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.972
+!MESSAGE 22:28:01.971 [pool-3-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.973
+!MESSAGE 22:28:01.971 [pool-3-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.976
+!MESSAGE 22:28:01.975 [pool-3-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:01.982
+!MESSAGE 22:28:01.981 [pool-3-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/ApiTareasApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.503
+!MESSAGE 22:28:13.502 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 1
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.515
+!MESSAGE 22:28:13.510 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.565
+!MESSAGE 22:28:13.561 [pool-3-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.566
+!MESSAGE 22:28:13.562 [pool-3-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.576
+!MESSAGE 22:28:13.567 [pool-5-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.689
+!MESSAGE 22:28:13.687 [pool-3-thread-11] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:13.691
+!MESSAGE 22:28:13.688 [pool-3-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.071
+!MESSAGE 22:28:14.070 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.875
+!MESSAGE 22:28:14.790 [pool-5-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.881
+!MESSAGE n AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.886
+!MESSAGE 22:28:14.794 [pool-3-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.889
+!MESSAGE 22:28:14.796 [pool-3-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.890
+!MESSAGE 22:28:14.798 [pool-3-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.892
+!MESSAGE 22:28:14.847 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java done in 777ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-21 22:28:14.894
+!MESSAGE 22:28:14.847 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Users/Administrator/eclipse-workspace/API_Tareas/src/main/java/com/example/demo/controladores/TareaControlador.java
+!SESSION 2026-01-22 10:13:39.685 -----------------------------------------------
+eclipse.buildId=4.38.0.20251204-0849
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-01-22 10:13:49.762
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-01-22 10:13:54.675
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-01-22 10:13:56.682
+!MESSAGE Logback config file: C:\Users\Administrator\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.101.20251017-1242.xml
+
+!ENTRY org.eclipse.ui 2 0 2026-01-22 10:13:57.918
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-22 10:13:57.918
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2026-01-22 10:13:59.213
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-22 10:13:59.213
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-01-22 10:14:23.413
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Administrator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-22 10:14:53.554
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-22 10:14:55.776
+!MESSAGE Direct modification of compileSourceRoots through clear() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-22 10:14:55.777
+!MESSAGE Direct modification of compileSourceRoots through add() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-22 10:14:55.779
+!MESSAGE Direct modification of testCompileSourceRoots through clear() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-01-22 10:14:55.779
+!MESSAGE Direct modification of testCompileSourceRoots through add() is deprecated and will not work in Maven 4.0.0. Please use the add/remove methods instead. If you're using a plugin that causes this warning, please upgrade to the latest version and report an issue if the warning persists. To disable these warnings, set -Dmaven.project.sourceRoots.warningsDisabled=true on the command line, in the .mvn/maven.config file, or in project POM properties.
+
+!ENTRY org.eclipse.lsp4e 2 0 2026-01-22 10:15:03.841
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
