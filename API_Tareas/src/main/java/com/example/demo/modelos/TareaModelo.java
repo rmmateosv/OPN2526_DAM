@@ -18,7 +18,7 @@ public class TareaModelo {
 	@Column(nullable = false)
 	private String titulo;
 	@Column(nullable = false)
-	private String descricion;
+	private String descripcion;
 	@Column(nullable = false)
 	private LocalDate fecha_creacion=LocalDate.now();
 	@Column(nullable = false)
@@ -33,7 +33,7 @@ public class TareaModelo {
 		super();
 		this.id = id;
 		this.titulo = titulo;
-		this.descricion = descricion;
+		this.descripcion = descricion;
 		this.fecha_creacion = fecha_creacion;
 		this.prioridad = prioridad;
 		this.estado = estado;
@@ -50,11 +50,11 @@ public class TareaModelo {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getDescricion() {
-		return descricion;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setDescricion(String descricion) {
-		this.descricion = descricion;
+	public void setDescripcion(String descricion) {
+		this.descripcion = descricion;
 	}
 	public LocalDate getFecha_creacion() {
 		return fecha_creacion;

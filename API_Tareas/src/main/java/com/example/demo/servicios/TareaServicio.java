@@ -35,22 +35,22 @@ public class TareaServicio {
 			//Comprobar que se rellenan todos los atributos
 			//de la tarea
 			if(t.getTitulo()==null || 
-			   t.getDescricion()==null ||
+			   t.getDescripcion()==null ||
 			   t.getEstado()==null || 
 			   t.getPrioridad()== null ||
 			   t.getFecha_creacion() == null) {
 				throw new Exception("Faltan datos de la tarea ");
 			}else {
 				//comprobar prioridad
-				if(!t.getPrioridad().equals("baja") && 
-						!t.getPrioridad().equals("media") && 
-						!t.getPrioridad().equals("alta")) {
+				if(!t.getPrioridad().equalsIgnoreCase("baja") && 
+						!t.getPrioridad().equalsIgnoreCase("media") && 
+						!t.getPrioridad().equalsIgnoreCase("alta")) {
 					throw new Exception("Priodad incorrecta (baja|media|alta)");
 				}
 				//comprobar estado
-				if(!t.getEstado().equals("pendiente") && 
-						!t.getEstado().equals("iniciado") && 
-						!t.getEstado().equals("finalizado")) {
+				if(!t.getEstado().equalsIgnoreCase("pendiente") && 
+						!t.getEstado().equalsIgnoreCase("iniciado") && 
+						!t.getEstado().equalsIgnoreCase("finalizado")) {
 					throw new Exception("Estado incorrecto (pendiente|iniciado|finalizado)");
 				}	
 				return tr.save(t);
@@ -84,8 +84,8 @@ public class TareaServicio {
 		if(t.getPrioridad()!=null) {
 			tBD.setPrioridad(t.getPrioridad());
 		}
-		if(t.getDescricion()!=null) {
-			tBD.setDescricion(t.getDescricion());
+		if(t.getDescripcion()!=null) {
+			tBD.setDescripcion(t.getDescripcion());
 		}
 		//Guardar en BD
 		return tr.save(tBD);
