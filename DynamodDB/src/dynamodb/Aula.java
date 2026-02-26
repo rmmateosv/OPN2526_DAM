@@ -44,7 +44,7 @@ public class Aula {
 				+ "metros=" + metros+ " recursos=[";
 		
 		for(Recurso r:recursos) {
-			resultado+= "[" + r + "]";
+			resultado+=  r ;
 		}
 		
 		resultado+= "]";

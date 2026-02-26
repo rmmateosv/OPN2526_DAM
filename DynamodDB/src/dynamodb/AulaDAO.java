@@ -143,4 +143,30 @@ public class AulaDAO {
 		return resultado;
 	}
 
+	public boolean modificarAula(Aula a) {
+		// TODO Auto-generated method stub
+		boolean resultado = false;
+		try {
+			tAula.updateItem(a);
+			resultado=true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public boolean borrarAula(Aula a) {
+		// TODO Auto-generated method stub
+		boolean resultado = false;
+		try {
+			tAula.deleteItem(a);
+			resultado=true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
 }

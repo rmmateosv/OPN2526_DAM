@@ -1,6 +1,5 @@
 package dynamodb;
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,17 +52,17 @@ public class Principal {
 	private static boolean addRecurso() {
 		// TODO Auto-generated method stub
 		System.out.println("Introduce código del aula");
-		String codigo  = t.nextLine();
+		String codigo = t.nextLine();
 		Aula a = bd.obtenerAula(codigo);
-		if(a==null) {
+		if (a == null) {
 			System.out.println("Error: No existen el aula");
-		}
-		else {
+		} else {
 			System.out.println("Introduce código de recurso");
-			int codigoR = t.nextInt(); t.nextLine();
-			//Comprobar que no está entre los recursos del aula
-			for (Recurso r:a.getRecursos()) {
-				if(r.getCodigo()==codigoR) {
+			int codigoR = t.nextInt();
+			t.nextLine();
+			// Comprobar que no está entre los recursos del aula
+			for (Recurso r : a.getRecursos()) {
+				if (r.getCodigo() == codigoR) {
 					System.out.println("Error: ya existe el recurso");
 					return false;
 				}
@@ -72,26 +71,40 @@ public class Principal {
 			r.setCodigo(codigoR);
 			System.out.println("Nombre de recurso");
 			r.setNombre(t.nextLine());
-			
-			
+			a.getRecursos().add(r);
+			if (bd.modificarAula(a)) {
+				System.out.println("Aula modificada");
+			} else {
+				System.out.println("Error al modificar el aula");
+			}
+
 		}
 		return true;
 	}
 
 	private static void borrarAula() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Introduce código del aula");
+		String codigo = t.nextLine();
+		Aula a = bd.obtenerAula(codigo);
+		if (a == null) {
+			System.out.println("Error: No existe el aula");
+		} else {
+			if (bd.borrarAula(a)) {
+				System.out.println("Aula borrada");
+			} else {
+				System.out.println("Error al borrar el aula");
+			}
+		}
 	}
 
 	private static void mostrarAula() {
 		// TODO Auto-generated method stub
 		System.out.println("Introduce código del aula");
-		String codigo  = t.nextLine();
+		String codigo = t.nextLine();
 		Aula a = bd.obtenerAula(codigo);
-		if(a==null) {
+		if (a == null) {
 			System.out.println("Error: No existen el aula");
-		}
-		else {
+		} else {
 			System.out.println(a);
 		}
 	}
@@ -99,7 +112,7 @@ public class Principal {
 	private static void mostrarAulas() {
 		// TODO Auto-generated method stub
 		ArrayList<Aula> aulas = bd.obtenerAulas();
-		for(Aula a:aulas) {
+		for (Aula a : aulas) {
 			System.out.println(a);
 		}
 	}
@@ -110,29 +123,27 @@ public class Principal {
 		System.out.println("Código");
 		a.setCodigo(t.nextLine());
 		System.out.println("Metros");
-		a.setMetros(t.nextInt());t.nextLine();
-		//Comprobar si existe el aula
+		a.setMetros(t.nextInt());
+		t.nextLine();
+		// Comprobar si existe el aula
 		Aula aux = bd.obtenerAula(a.getCodigo());
-		if(aux==null) {
-			if(bd.crearAula(a)) {
+		if (aux == null) {
+			if (bd.crearAula(a)) {
 				System.out.println("Aula creada");
-			}
-			else {
+			} else {
 				System.out.println("Error: No se ha creado el aula");
 			}
-		}
-		else {
+		} else {
 			System.out.println("Error: Aula ya existe");
 		}
-		
+
 	}
 
 	private static void crearTablaAulas() {
 		// TODO Auto-generated method stub
-		if(bd.crearTablaAulas()) {
+		if (bd.crearTablaAulas()) {
 			System.out.println("Tabla creada correctamente");
-		}
-		else {
+		} else {
 			System.out.println("Error al crear la tabla");
 		}
 	}

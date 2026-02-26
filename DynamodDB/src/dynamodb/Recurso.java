@@ -27,7 +27,7 @@ public class Recurso {
 	}
 	@Override
 	public String toString() {
-		return "Recurso [codigo=" + codigo + ", nombre=" + nombre + "]";
+		return "[codigo=" + codigo + ", nombre=" + nombre + "]";
 	}
 	
 	
