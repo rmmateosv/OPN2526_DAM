@@ -1,12 +1,14 @@
 package dynamodb;
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 import software.amazon.awssdk.enhanced.dynamodb.Key;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
+import software.amazon.awssdk.enhanced.dynamodb.model.PageIterable;
 import software.amazon.awssdk.profiles.ProfileFile;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
@@ -118,6 +120,22 @@ public class AulaDAO {
 		try {
 			tAula.putItem(a);
 			resultado=true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return resultado;
+	}
+
+	public ArrayList<Aula> obtenerAulas() {
+		// TODO Auto-generated method stub
+		ArrayList<Aula> resultado =new ArrayList<Aula>();
+		try {
+			PageIterable<Aula> datos = tAula.scan();
+			for(Aula a:datos.items()) {
+				resultado.add(a);
+			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

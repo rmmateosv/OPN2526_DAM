@@ -41,7 +41,7 @@ public class Aula {
 		String resultado;
 		
 		resultado= "Aula [codigo=" + codigo + ", "
-				+ "metros=" + metros+ "recursos=[";
+				+ "metros=" + metros+ " recursos=[";
 		
 		for(Recurso r:recursos) {
 			resultado+= "[" + r + "]";
